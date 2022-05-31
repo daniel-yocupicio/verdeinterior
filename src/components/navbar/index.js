@@ -2,7 +2,8 @@ import React from "react";
 import logo from '../../assets/images/verdeLogo.png';
 import { IconContext } from "react-icons";
 import {
-    FaUserCircle
+    FaUserCircle,
+    FaAlignJustify
   } from "react-icons/fa";
 import {
     Menuitem, 
@@ -34,19 +35,30 @@ const MaxNavbar = () => {
 }
 
 const MinNavbar = () => {
-    return (
-        <div style={{flex:1, flexDirection: 'row'}}>
-            <AccountIconContainer>
-                <FaUserCircle />
-            </AccountIconContainer>
-            <Logo src={logo} width={165} height={83} style={{position: 'absolute', top: 0, left: 30}}/>
-            <SmallButtonsContainer>
-                <SmallMenuitem>INICIO</SmallMenuitem>
-                <SmallMenuitem>PRODUCTOS</SmallMenuitem>
-                <SmallMenuitem>TALLERES</SmallMenuitem>
-                <SmallMenuitem>ACERCA DE NOSOTROS</SmallMenuitem>
-                <SmallMenuitem>CONTACTANOS</SmallMenuitem>
-            </SmallButtonsContainer>
+    return(
+        <div>
+            <nav className="bg-green h-24 p-2">
+                <div className="flex justify-between sm:hidden">
+                    <AccountIconContainer>
+                        <FaAlignJustify />
+                    </AccountIconContainer>
+                    <h2 className="font-bold text-black my-6">Verde interior</h2>
+                </div>
+                <div className="hidden sm:inline">
+                    <div className="flex justify-between">
+                        <div>
+                            <img className="inline h-24" src={logo}/>
+                            <a href="#" className="font-bold text-black hover:bg-green-light p-1 rounded-md">Inicio</a>
+                            <a href="#" className="font-bold text-black hover:bg-green-light p-1 rounded-md ml-4">Talleres</a>
+                            <a href="#" className="font-bold text-black hover:bg-green-light p-1 rounded-md ml-4">Acerca de nosotros</a>
+                            <a href="#" className="font-bold text-black hover:bg-green-light p-1 rounded-md ml-4">Contactanos</a>
+                        </div>
+                        <AccountIconContainer>
+                            <FaUserCircle />
+                        </AccountIconContainer>
+                    </div>
+                </div>
+            </nav>
         </div>
     )
 }
